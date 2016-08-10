@@ -10,3 +10,4 @@ Cambios realizados:
 3. Creacion de codigo para que la carpeta tuner y las listas se creen automaticamente en montaje /media/hdd si no existe automaticamente 
 lo intentara en /media/usb, si existen ambos montajes da preferencia a media/hdd.
 4. Añadido skin confluence basado en la adaptacion de mpiero a enigma2, gracias a mpiero y resto equipo openspateam
+5. Añadido enlace a gestion de montajes de openspa desde menu TunerServer.

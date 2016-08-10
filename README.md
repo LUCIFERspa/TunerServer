@@ -11,3 +11,4 @@ Cambios realizados:
 lo intentara en /media/usb, si existen ambos montajes da preferencia a media/hdd.
 4. Añadido skin confluence basado en la adaptacion de mpiero a enigma2, gracias a mpiero y resto equipo openspateam
 5. Añadido enlace a gestion de montajes de openspa desde menu TunerServer.
+6. Gracias a usuario openspa reychango que menciono el problema de su utilizacion del plugin en imagen openspa combinado con xupnpd.

@@ -10,6 +10,14 @@ from enigma import eServiceCenter, eServiceReference, eTimer
 from shutil import rmtree, move, copy
 import os
 
+def testlista():
+    lista = 'No Montaje encontrado'
+    if os.path.ismount('/media/hdd'):
+        lista = '/media/hdd/tuner/'
+    elif os.path.ismount('/media/usb'):
+        lista = '/media/usb/tuner/'
+    return lista
+
 class TunerServer(Screen):
     skin = """
 	<screen name="TunerServer" zPosition="2" position="0,0" size="1280,720" title="Plugins" flags="wfNoBorder" backgroundColor="#ff000000">
@@ -47,7 +55,8 @@ class TunerServer(Screen):
       <widget font="Regular; 17" backgroundColor="dp_gris_barra_fondo" halign="right" position="484,640" render="Label" size="592,71" source="session.CurrentService" transparent="1" foregroundColor="dp_gris_barra" valign="top" borderColor="dp_gris_barra_sombra2" borderWidth="1">
       <convert type="spaSysInfo">DiskAllSleep</convert>
       </widget>
-<widget name="homeinfo" position="100,40" size="500,30" zPosition="11" font="Regular; 21" halign="left" valign="center" backgroundColor="#140b1" foregroundColor="white" transparent="1" noWrap="1" />
+<widget name="versionlista" position="400,40" size="500,30" zPosition="11" font="Regular; 21" halign="left" valign="center" backgroundColor="#140b1" foregroundColor="#FFC300" transparent="1" noWrap="1" />
+<widget name="lab3" position="100,40" size="500,30" zPosition="11" font="Regular; 21" halign="left" valign="center" backgroundColor="#140b1" foregroundColor="#FFC300" transparent="1" noWrap="1" />
     </screen>"""
 
     def __init__(self, session):
@@ -62,7 +71,8 @@ class TunerServer(Screen):
         self['key_green'] = Label(_('Disable Server'))
         self['key_yellow'] = Label(_('Close'))
 	self['key_blue'] = Label(_('Manage disk'))
-	self['homeinfo'] = Label(_('Home Tuner Server'))
+	self['versionlista'] = Label(_('%s') % testlista())
+	self['lab3'] = Label(_('Ubicacion montaje para tuner:'))
         self.my_serv_active = False
         self.ip = '0.0.0.0'
         self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'ok': self.close,

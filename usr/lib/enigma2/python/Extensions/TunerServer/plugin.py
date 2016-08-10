@@ -7,7 +7,6 @@ from Components.Label import Label
 from Components.Network import iNetwork
 from Tools.Directories import fileExists
 from enigma import eServiceCenter, eServiceReference, eTimer
-from boxbranding import getImageDistro
 from shutil import rmtree, move, copy
 import os
 

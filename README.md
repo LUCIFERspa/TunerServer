@@ -1,5 +1,5 @@
 # TunerServer
-TunerServer Modificado para imagen OpenSpa mas en informacion en www.openspa.info
+TunerServer Modificado para imagen OpenSpa mas en informacion en https://linuxzone.tv/
 
 Modificacion realizada en base a TunerServer originario de rossi2000
 

@@ -24,8 +24,6 @@ class TunerServer(Screen):
 <ePixmap name="arriba" position="0,0" size="1280,720" alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TunerServer/confluence/menu/windows-fs8.png" zPosition="-5" />
 <widget source="key_red" render="Label" position="130,387" size="276,30" zPosition="1" font="Regular; 21" halign="left" valign="center" backgroundColor="#00000000" transparent="1" foregroundColor="#00ffffff" noWrap="1" />
  <ePixmap name="botonrojo" position="89,383" size="39,39" alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TunerServer/confluence/menu/botrojo-fs8.png" zPosition="20" />
-<widget source="key_blue" render="Label" position="130,434" size="276,30" zPosition="1" font="Regular; 21" halign="left" valign="center" backgroundColor="#00000000" transparent="1" foregroundColor="#00ffffff" noWrap="1" />
-<ePixmap name="botonazul" position="89,430" size="39,39" alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TunerServer/confluence/menu/botazul-fs8.png" zPosition="20" />
 <widget source="key_yellow" render="Label" position="130,481" size="276,30" zPosition="1" font="Regular; 21" halign="left" valign="center" backgroundColor="#00000000" transparent="1" foregroundColor="#00ffffff" noWrap="1" />
 <ePixmap name="botonamarillo" position="89,477" size="39,39" alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TunerServer/confluence/menu/botamarillo-fs8.png" zPosition="20" />
 <widget source="key_green" render="Label" position="130,527" size="276,30" zPosition="1" font="Regular; 21" halign="left" valign="center" backgroundColor="#00000000" transparent="1" foregroundColor="#00ffffff" noWrap="1" />
@@ -70,7 +68,6 @@ class TunerServer(Screen):
         self['key_red'] = Label(_('Build Server'))
         self['key_green'] = Label(_('Disable Server'))
         self['key_yellow'] = Label(_('Close'))
-	self['key_blue'] = Label(_('Manage disk'))
 	self['versionlista'] = Label(_('%s') % testlista())
 	self['lab3'] = Label(_('Ubicacion montaje para tuner:'))
         self.my_serv_active = False
@@ -86,10 +83,6 @@ class TunerServer(Screen):
         self.onClose.append(self.delTimer)
         self.onLayoutFinish.append(self.updateServ)
 		
-    def montar(self):
-		from Plugins.SystemPlugins.DeviceManager.HddSetup import HddSetup
-		self.session.open(HddSetup)
-
     def ServStart(self):
         if os.path.ismount('/media/hdd'):
             self['lab1'].setText(_('Your server is now building hdd \nPlease wait ...'))

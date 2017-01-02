@@ -76,8 +76,7 @@ class TunerServer(Screen):
          'back': self.close,
          'red': self.ServStart,
          'green': self.ServStop,
-		 'blue': self.montar,
-         'yellow': self.close})
+	 'yellow': self.close})
         self.activityTimer = eTimer()
         self.activityTimer.timeout.get().append(self.doServStart)
         self.onClose.append(self.delTimer)
